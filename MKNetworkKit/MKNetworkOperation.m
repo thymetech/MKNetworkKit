@@ -502,7 +502,7 @@
 -(void) setUsername:(NSString*) username password:(NSString*) password basicAuth:(BOOL) bYesOrNo {
   
   [self setUsername:username password:password];
-  NSString *base64EncodedString = [[[NSString stringWithFormat:@"%@:%@", self.username, self.password] dataUsingEncoding:NSUTF8StringEncoding] base64EncodedString];
+  NSString *base64EncodedString = [[[NSString stringWithFormat:@"%@:%@", self.username, self.password] dataUsingEncoding:NSUTF8StringEncoding] base64Encode];
   
   [self setAuthorizationHeaderValue:base64EncodedString forAuthType:@"Basic"];
 }
